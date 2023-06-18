@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #16222a, #3a6073);
+
+}
+.elastic {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  /* background: #222; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.elastic::before {
+  content: '';
+  position: absolute;
+  bottom: 62.5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to right, #f0f2f0, #000c40);
+  border-radius: 50%;
+  z-index: 1;
+}
+.elastic::after {
+  content: '';
+  position: absolute;
+  bottom: 62.5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to right, #000c40, #f0f2f0);
+  border-radius: 50%;
+  z-index: 1;
+}
+.elastic svg {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  fill:none;
+}
+.elastic svg:nth-child(2) {
+  filter: blur(25px);
+}
+.elastic svg path {
+  width: 100%;
+  stroke: #24fe41;
+  stroke-width: 10;
+  stroke-linecap: round;
+  d: path("M 10 80 Q 190 80 390 80");
+  animation: yes 2.5s linear infinite, forcolor 2.5s linear infinite;
+}
+@keyframes yes {
+  0% {
+    d: path("M 10 80 Q 190 80 390 80");
+  }
+  10% {
+    d: path("M 10 80 Q 190 160 390 80");
+  }
+  20% {
+    d: path("M 10 80 Q 190 20 390 80");
+  }
+  30% {
+    d: path("M 10 80 Q 190 120 390 80");
+  }
+  35% {
+    d: path("M 10 80 Q 190 100 390 80");
+  }
+  40% {
+    d: path("M 10 80 Q 190 80 390 80");
+  }
+  50% {
+    d: path("M 10 80 Q 190 100 390 80");
+  }
+  55% {
+    d: path("M 10 80 Q 190 90 390 80");
+  }
+  60% {
+    d: path("M 10 80 Q 190 80 390 80");
+  }
+}
+@keyframes forcolor {
+  0%, 100% {
+    stroke: #24fe41;
+  }
+  33.33% {
+      stroke: #ff5f6d;
+  }
+  66.66% {
+    stroke: #f0cb35;
+  }
+}
+.ball {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right, #f0f2f0, #000c40);
+  border-radius: 50%;
+  box-shadow: inset 0 -15px 20px rgba(0, 0, 0, 0.5);
+  animation: yesBalya 2.5s linear infinite;
+}
+@keyframes yesBalya {
+  0%, 100% {
+    transform: translateY(-72.5px);
+
+  }
+  10%,11.5% {
+    transform: translateY(-40px);
+
+  }
+  50% {
+    transform: translateY(-350px);
+
+  }
+}
